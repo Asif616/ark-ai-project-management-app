@@ -1,0 +1,43 @@
+# Secrets — never commit real keys. Keep .env.example only.
+.env
+*.env
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+
+# Node / Vite
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# SQLite local DBs
+*.db
+*.sqlite
+*.sqlite-*
+*.db-journal
+
+# Tool output / logs
+.playwright-mcp/
+*.log
+logs/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo

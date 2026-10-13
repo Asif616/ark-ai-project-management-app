@@ -1,0 +1,10 @@
+fastapi==0.115.0
+uvicorn==0.30.6
+sqlalchemy==2.0.35
+pydantic==2.9.2
+python-jose[cryptography]==3.3.0
+python-dotenv==1.2.2
+langgraph==1.2.14
+langchain==1.4.4
+langchain-groq==1.1.2
+psycopg2-binary==2.9.9
