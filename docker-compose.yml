@@ -1,4 +1,3 @@
-# Compose defaults the project name to the directory name (bam-*). Pin it.
 name: ark
 
 services:
@@ -15,7 +14,6 @@ services:
         VITE_SUPABASE_PUBLISHABLE_KEY: ${VITE_SUPABASE_PUBLISHABLE_KEY:?set VITE_SUPABASE_PUBLISHABLE_KEY in .env}
     ports:
       - "8080:80"
-    # nginx resolves the upstream host at config-parse time and refuses to boot
-    # if it cannot. This guarantees the `server` container exists in DNS first.
+
     depends_on:
       - server

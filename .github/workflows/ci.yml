@@ -1,0 +1,50 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  client:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: client
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: client/package-lock.json
+      - run: npm ci
+      - run: npm run lint
+      - run: npm test
+      - run: npm run build
+        env:
+          VITE_API_BASE_URL: /api
+          VITE_SUPABASE_URL: https://dummy.supabase.co
+          VITE_SUPABASE_PUBLISHABLE_KEY: dummy
+
+  server:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: server
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt pytest httpx ruff
+      - run: ruff check .
+      - run: pytest -q
+        env:
+          SECRET_KEY: dummy-ci-key
+          DATABASE_URL: sqlite:///./test.db
+          SUPABASE_URL: https://dummy.supabase.co
+          SUPABASE_SECRET_KEY: dummy-key
+          BACKEND_CORS_ORIGINS: http://localhost:3000

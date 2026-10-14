@@ -41,3 +41,10 @@ Thumbs.db
 .idea/
 *.swp
 *.swo
+
+# Local AI agent / opencode config — personal, not part of repo
+.agents/
+.opencode/
+opencode.json
+opencode.jsonc
+skills-lock.json
