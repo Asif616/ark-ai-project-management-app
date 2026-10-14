@@ -1,0 +1,15 @@
+name: ark
+
+services:
+  server:
+    image: ${DOCKERHUB_USERNAME:?set DOCKERHUB_USERNAME in .env}/ark-server:latest
+    env_file: .env
+    restart: unless-stopped
+
+  client:
+    image: ${DOCKERHUB_USERNAME:?set DOCKERHUB_USERNAME in .env}/ark-client:latest
+    ports:
+      - "8080:80"
+    depends_on:
+      - server
+    restart: unless-stopped
