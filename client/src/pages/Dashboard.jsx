@@ -113,8 +113,8 @@ export default function Dashboard() {
     return (
         <motion.div variants={container} initial="hidden" animate="show" className="space-y-6">
             <motion.div variants={item} className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
-                <StatCard icon={FolderKanban} label="Total Projects" value={stats.total_projects} accent="#6366f1" />
-                <StatCard icon={ListTodo} label="Total Tasks" value={stats.total_tasks} accent="#22d3ee" />
+                <StatCard icon={FolderKanban} label="Total Projects" value={stats.total_projects} accent="#10b981" />
+                <StatCard icon={ListTodo} label="Total Tasks" value={stats.total_tasks} accent="#34d399" />
                 <StatCard icon={Users} label="Team Members" value={stats.total_users} accent="#34d399" />
                 <StatCard
                     icon={TrendingUp}

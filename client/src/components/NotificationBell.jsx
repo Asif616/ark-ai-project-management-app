@@ -61,8 +61,8 @@ export default function NotificationBell() {
         <div className="relative" ref={ref}>
             <button
                 onClick={() => setOpen((prev) => !prev)}
-                className="relative flex h-9 w-9 items-center justify-center rounded-control border transition-colors hover:border-primary-500/50"
-                style={{ borderColor: 'var(--border-color)', background: 'var(--bg-card)', color: 'var(--text-secondary)' }}
+                className="relative flex h-9 w-9 items-center justify-center rounded-full transition-colors hover:bg-primary-500/10"
+                style={{ background: 'transparent', color: 'var(--text-secondary)' }}
                 aria-label={unread > 0 ? `Notifications, ${unread} unread` : 'Notifications'}
                 aria-expanded={open}
             >

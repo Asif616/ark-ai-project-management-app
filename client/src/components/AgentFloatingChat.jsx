@@ -147,7 +147,9 @@ export default function AgentFloatingChat() {
     function onInput(event) {
         const el = event.target;
         el.style.height = 'auto';
-        el.style.height = `${Math.min(el.scrollHeight, 96)}px`;
+        // offsetHeight - clientHeight = border widths (border-box sizing),
+        // otherwise the box ends up 2px short and a scrollbar flashes.
+        el.style.height = `${Math.min(el.scrollHeight + (el.offsetHeight - el.clientHeight), 96)}px`;
         setInput(el.value);
     }
 
@@ -290,13 +292,13 @@ export default function AgentFloatingChat() {
                             onChange={onInput}
                             onKeyDown={onComposerKeyDown}
                             placeholder="Ask ARK AI…"
-                            className="field max-h-24 min-h-[40px] flex-1 resize-none py-2.5"
+                            className="field max-h-24 min-h-[40px] min-w-0 flex-1 resize-none rounded-full py-2.5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
                             aria-label="Message ARK AI"
                         />
                         <button
                             type="submit"
                             disabled={!canSend}
-                            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl transition-opacity disabled:opacity-40"
+                            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition-opacity disabled:opacity-40"
                             style={{ background: 'var(--color-primary-700)', color: 'var(--on-primary)' }}
                             aria-label="Send message"
                         >

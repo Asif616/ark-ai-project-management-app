@@ -28,7 +28,7 @@ export default function Users() {
         email: '',
         password: '',
         role: 'user',
-        avatar_color: '#6366f1',
+        avatar_color: '#10b981',
     });
 
     const generateTempPassword = () => {
@@ -63,7 +63,7 @@ export default function Users() {
 
     const openCreate = () => {
         setEditing(null);
-        setForm({ name: '', email: '', password: '', role: 'user', avatar_color: '#6366f1' });
+        setForm({ name: '', email: '', password: '', role: 'user', avatar_color: '#10b981' });
         setError('');
         setModalOpen(true);
     };
