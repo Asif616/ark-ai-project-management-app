@@ -69,14 +69,13 @@ export default function Header({ onMenuClick }) {
 
                     <NotificationBell />
 
-                    <Button
-                        variant="outline"
-                        size="icon"
+                    <button
                         onClick={toggle}
+                        className="flex h-9 w-9 items-center justify-center rounded-full text-[var(--text-secondary)] transition-colors hover:bg-primary-500/10 hover:text-[var(--text-primary)]"
                         aria-label={dark ? 'Switch to light theme' : 'Switch to dark theme'}
                     >
                         {dark ? <Sun className="h-4 w-4 text-amber-400" /> : <Moon className="h-4 w-4 text-primary-500" />}
-                    </Button>
+                    </button>
                 </div>
             </div>
 

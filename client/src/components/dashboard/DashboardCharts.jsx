@@ -13,18 +13,18 @@ import {
 } from 'recharts';
 
 const PIE_COLOR_BY_STATUS = {
-    Active: '#6366f1',
-    Completed: '#34d399',
+    Active: '#38bdf8',
+    Completed: '#10b981',
     'On Hold': '#fbbf24',
 };
 
-const FALLBACK_PIE_COLORS = ['#6366f1', '#22d3ee', '#34d399', '#fbbf24'];
+const FALLBACK_PIE_COLORS = ['#38bdf8', '#10b981', '#fbbf24', '#94a3b8'];
 
 const TASK_BAR_COLORS = {
-    'To Do': '#38bdf8',
-    'In Progress': '#6366f1',
+    'To Do': '#94a3b8',
+    'In Progress': '#38bdf8',
     Review: '#fbbf24',
-    Done: '#34d399',
+    Done: '#10b981',
 };
 
 export default function DashboardCharts({ barData, pieData }) {
@@ -66,11 +66,11 @@ export default function DashboardCharts({ barData, pieData }) {
                             contentStyle={tooltipStyle}
                             labelStyle={tooltipTextStyle}
                             itemStyle={tooltipTextStyle}
-                            cursor={{ fill: 'rgba(99,102,241,0.08)' }}
+                            cursor={{ fill: 'rgba(16,185,129,0.08)' }}
                         />
                         <Bar dataKey="tasks" radius={[6, 6, 0, 0]} animationDuration={900}>
                             {barData.map((entry) => (
-                                <Cell key={`bar-${entry.name}`} fill={TASK_BAR_COLORS[entry.name] || '#6366f1'} />
+                                <Cell key={`bar-${entry.name}`} fill={TASK_BAR_COLORS[entry.name] || '#10b981'} />
                             ))}
                         </Bar>
                     </BarChart>

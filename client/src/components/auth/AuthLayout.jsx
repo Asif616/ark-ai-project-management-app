@@ -36,7 +36,7 @@ export default function AuthLayout({ children }) {
                 <h1 className="relative z-10 px-10 font-display text-4xl font-semibold leading-[1.05] tracking-tight xl:px-14 xl:text-[3.25rem]">
                     <span className="gradient-text">Plan less.</span>
                     <br />
-                    <span className="gradient-text">Ship more.</span>
+                    <span className="bg-primary-600 px-2 text-white">Ship more.</span>
                 </h1>
             </aside>
 
